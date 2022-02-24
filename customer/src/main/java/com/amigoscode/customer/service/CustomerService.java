@@ -17,7 +17,7 @@ public class CustomerService {
     private final CustomerRepository repository;
     private final RestTemplate restTemplate;
 
-    private static final String FRAUD_CHECK_URL = "http://localhost:8081/api/v1/fraud-check/{customerId}";
+    private static final String FRAUD_CHECK_URL = "http://FRAUD/api/v1/fraud-check/{customerId}";
 
     @Transactional
     public void registerCustomer(CustomerRegistrationRequest request) {

@@ -1,4 +1,4 @@
-package com.amigoscode.fraud.model;
+package com.amigoscode.client.fraud.fraud.model;
 
 public record FraudCheckResponse(
         Boolean isFraudster) {

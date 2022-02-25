@@ -1,11 +1,10 @@
 package com.amigoscode.fraud.controller;
 
-import com.amigoscode.fraud.model.FraudCheckResponse;
+import com.amigoscode.client.fraud.fraud.model.FraudCheckResponse;
 import com.amigoscode.fraud.service.FraudCheckHistoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

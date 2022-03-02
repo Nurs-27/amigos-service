@@ -19,6 +19,13 @@ spring:
         format_sql: true
     show-sql: true
 
+  # it has own protocol (amqp)
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: "guest"
+    password: "guest"
+
 eureka:
   client:
     service-url:

@@ -19,7 +19,7 @@ public class CustomerService {
     private final CustomerRepository repository;
     private final FraudClient fraudClient;
     private final RabbitMqMessageProducer producer;
-    private final RabbitTemplate rabbitTemplate;
+//    private final RabbitTemplate rabbitTemplate;
 
     /*
     private final NotificationClient notificationClient;

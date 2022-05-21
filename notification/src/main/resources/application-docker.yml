@@ -1,0 +1,29 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:54321/notification
+    username: postgres
+    password: postgres
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: "guest"
+    password: "guest"
+  #  rabbitmq:
+  #    addresses: rabbitmq:5672 # it has own protocol (amqp)
+  zipkin:
+    base-url: "http://zipkin:9411"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://eureka-server:8761/eureka"
+
+rabbitmq:
+  exchanges:
+    internal: "internal.exchange" # exchange name
+  queues:
+    notification: "notification.queue" # queue name
+  routing-keys:
+    internal-notification: "internal.notification.routing"

@@ -1,11 +1,9 @@
 server:
-  port: 8084
+  port: 7074
 
 spring:
   application:
     name: notification
-  zipkin:
-    base-url: "http://localhost:9411"
 
   datasource:
     url: jdbc:postgresql://localhost:5432/notification
@@ -22,8 +20,10 @@ spring:
     show-sql: true
 
   rabbitmq:
-
     addresses: localhost:5672 # it has own protocol (amqp)
+
+  zipkin:
+    base-url: "http://localhost:9411"
 
 eureka:
   client:
@@ -32,8 +32,8 @@ eureka:
 
 rabbitmq:
   exchanges:
-    internal: "internal.exchange"
+    internal: "internal.exchange" # exchange name
   queues:
-    notification: "notification.queue"
+    notification: "notification.queue" # queue name
   routing-keys:
     internal-notification: "internal.notification.routing"

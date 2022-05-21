@@ -1,0 +1,21 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:54321/customer
+    username: postgres
+    password: postgres
+
+  # it has own protocol (amqp)
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+  zipkin:
+    base-url: http://zipkin:9411
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://eureka-server:8761/eureka"

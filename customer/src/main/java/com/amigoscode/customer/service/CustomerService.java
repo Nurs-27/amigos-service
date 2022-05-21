@@ -9,7 +9,6 @@ import com.amigoscode.customer.repository.CustomerRepository;
 import java.util.Objects;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,12 +19,6 @@ public class CustomerService {
     private final FraudClient fraudClient;
     private final RabbitMqMessageProducer producer;
 //    private final RabbitTemplate rabbitTemplate;
-
-    /*
-    private final NotificationClient notificationClient;
-    private final RestTemplate restTemplate;
-    private static final String FRAUD_CHECK_URL = "http://FRAUD/api/v1/fraud-check/{customerId}";
-    */
 
     @Transactional
     public void registerCustomer(CustomerRegistrationRequest request) {
@@ -38,18 +31,10 @@ public class CustomerService {
         repository.saveAndFlush(customer);
 
         final var fraudCheckResponse = fraudClient.isFraudster(customer.getId());
-        if (Objects.requireNonNull(fraudCheckResponse).isFraudster()) {
+        if (Boolean.TRUE.equals(Objects.requireNonNull(fraudCheckResponse).isFraudster())) {
             throw new IllegalStateException("fraudster");
         }
 
-        /*notificationClient.sendNotification(
-                new NotificationRequest(
-                        customer.getId(),
-                        customer.getEmail(),
-                        String.format("Hi %s, welcome to Amigoscode...",
-                                customer.getFirstName())
-                )
-        );*/
         NotificationRequest notificationRequest = new NotificationRequest(
                 customer.getId(),
                 customer.getEmail(),
@@ -61,11 +46,5 @@ public class CustomerService {
                 "internal.exchange",
                 "internal.notification.routing"
         );
-
-        /*rabbitTemplate.convertAndSend(
-                "rabbitmq.internal.exchange",
-                "rabbitmq.routing-keys.internal-notification",
-                notificationRequest
-        );*/
     }
 }

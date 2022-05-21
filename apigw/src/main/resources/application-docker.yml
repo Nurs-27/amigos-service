@@ -12,7 +12,7 @@ spring:
     gateway:
       routes:
         - id: customer
-          uri: lb://CUSTOMER # CUSTOMER - eureka-server app name
+          uri: lb://CUSTOMER
           predicates:
             - Path=/api/v1/customers/**
         - id: fraud
@@ -27,6 +27,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true

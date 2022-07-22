@@ -7,10 +7,6 @@ Qcustomer/src/main/java/com/amigoscode/customer/repository/CustomerRepository.ja
 v
 Ffraud/src/main/java/com/amigoscode/fraud/domain/FraudCheckHistory.java,0/6/060191e79b5531080c5ffd0d2c46311cb8759bf9
 „
-Tfraud/src/main/java/com/amigoscode/fraud/repository/FraudCheckHistoryRepository.java,e/d/ed3e87bcdb809bf7b7f335bbc592e2357b6cfd77
-~
-Nfraud/src/main/java/com/amigoscode/fraud/service/FraudCheckHistoryService.java,0/9/09a660a636affed273162ed644299f5de42b7460
-„
 Tclient/src/main/java/com/amigoscode/client/fraud/fraud/model/FraudCheckResponse.java,d/9/d96d538052009b9ad16303c394655fdbd592a7da
 
 ]notification/src/main/java/com/amigoscode/notification/repository/NotificationRepository.java,7/7/7749b7555e4ee9183bf65ba4ff996b42883dab5d
@@ -21,10 +17,6 @@ Ccustomer/src/main/java/com/amigoscode/customer/domain/Customer.java,4/1/41e7be
 
 Onotification/src/main/java/com/amigoscode/notification/domain/Notification.java,a/f/af503c0e53642b51e078aad1eb28f074733bede1
 …
-Uclient/src/main/java/com/amigoscode/client/fraud/notification/NotificationClient.java,4/b/4bf5d1c4590dd91d2a338d7dcee9820f25ff0395
-w
-Gclient/src/main/java/com/amigoscode/client/fraud/fraud/FraudClient.java,1/a/1af375b0e9c0af2ece7690200e2a27b6d5cedc37
-n
->fraud/src/main/java/com/amigoscode/fraud/FraudApplication.java,d/2/d296bbdbe67cf8b59d1a501e9cfdbdc1bd593e72
-…
 Unotification/src/main/java/com/amigoscode/notification/config/NotificationConfig.java,b/5/b58ced9619b465ccba7e24ea01ee1e5ddb15a15b
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec

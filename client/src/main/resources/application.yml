@@ -1,0 +1,35 @@
+clients:
+  customer:
+    url: http://localhost:7070
+  fraud:
+    url: http://localhost:7071
+  notification:
+    url: http://localhost:7072
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+clients:
+  customer:
+    url: http://customer:7070
+  fraud:
+    url: http://fraud:7071
+  notification:
+    url: http://notification:7072
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kube
+
+clients:
+  customer:
+    url: http://customer
+  fraud:
+    url: http://fraud
+  notification:
+    url: http://notification

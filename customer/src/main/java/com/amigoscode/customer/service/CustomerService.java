@@ -6,11 +6,17 @@ import com.amigoscode.client.fraud.notification.model.NotificationRequest;
 import com.amigoscode.customer.domain.Customer;
 import com.amigoscode.customer.model.CustomerRegistrationRequest;
 import com.amigoscode.customer.repository.CustomerRepository;
-import java.util.Objects;
-import javax.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
+import javax.transaction.Transactional;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
@@ -22,6 +28,8 @@ public class CustomerService {
 
     @Transactional
     public void registerCustomer(CustomerRegistrationRequest request) {
+        log.info("New customer registration {}", request);
+
         final var customer = Customer.builder()
                 .firstName(request.firstName())
                 .lastName(request.lastName())

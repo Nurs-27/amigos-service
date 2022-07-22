@@ -17,7 +17,7 @@ public class FraudCheckHistoryService {
                 .customerId(customerId)
                 .isFraudster(false)
                 .build();
-        repository.save(fraudCheckHistory);
+//        repository.save(fraudCheckHistory);
 
         return false;
     }
